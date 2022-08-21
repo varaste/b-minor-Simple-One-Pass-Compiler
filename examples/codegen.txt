@@ -1,0 +1,144 @@
+global_integer: integer = 12345;
+global_boolean: boolean = true;
+global_character: char = 'x';
+global_string: string = "Hello, World";
+
+global_array: array [10] integer = {1, 2, 3};
+
+func_many_args: function integer (
+    a: integer, b: integer, c: integer, d: integer, e: integer,
+    f: integer, g: integer, h: integer, i: integer, j: integer,
+) = {
+    x: integer = a + b + c + d + e + f + g + h + i + j;
+    print "x is ", x, "\n";
+    return x;
+}
+
+main: function integer () = {
+    // testing global variables
+    print "global_integer should be 12345, is: ", global_integer, "\n";
+    print "global_boolean should be true, is: ", global_boolean, "\n";
+    print "global_character should be 'x', is: '", global_character, "'\n";
+    print "global_string should be 'Hello, World', is: '", global_string, "'\n\n";
+
+    // test comparison operators
+    print "100 == 100. should be true, is: ", 100 == 100, " \n";
+    print "100 == 99. should be false, is: ", 100 == 99, " \n\n";
+
+    print "100 != 100. should be false, is: ", 100 != 100, " \n";
+    print "100 != 99. should be true, is: ", 100 != 99, " \n\n";
+
+    print "5 > 10. should be false, is: ", 5 > 10, " \n";
+    print "10 > 5. should be true, is: ", 10 > 5, " \n\n";
+
+    print "5 >= 5. should be true, is: ", 5 >= 5, " \n";
+    print "4 >= 5. should be false, is: ", 4 >= 5, " \n\n";
+
+    print "5 < 10. should be true, is: ", 5 < 10, " \n";
+    print "10 < 5. should be false, is: ", 10 < 5, " \n\n";
+
+    print "5 <= 5. should be true, is: ", 5 <= 5, " \n";
+    print "5 <= 6. should be true, is: ", 5 <= 6, " \n\n";
+
+    // test logical operators
+    print "!true. should be false, is: ", !true, "\n";
+    print "!false. should be true, is: ", !false, "\n";
+    print "!!true. should be true, is: ", !!true, "\n\n";
+
+    print "false || false. should be false is: ", false || false, "\n";
+    print "false || true. should be true, is: ", false || true, "\n";
+    print "true || false. should be true, is: ", true || false, "\n";
+    print "true || true. should be true, is: ", true || true, "\n\n";
+
+    print "false && false. should be false, is: ", false && false, "\n";
+    print "false && true. should be false, is: ", false && true, "\n";
+    print "true && false. should be false is: ", true && false, "\n";
+    print "true && true. should be true, is: ", true && true, "\n\n";
+
+    // test arithmetic operators
+    print "-10. should be -10, is: ", -10, "\n";
+    print "-(-10). should be 10, is: ", -(-10), "\n\n";
+
+    print "1 + 1, should be 2, is: ", 1 + 1, "\n";
+    print "100 - 70, should be 30, is: ", 100 - 70, "\n";
+    print "7 * 42, should be 294, is: ", 294, "\n";
+    print "8 / 3, should be 2, is: ", 8 / 3, "\n";
+    print "-21 % 6, should be -3, is: ", -21 % 6, "\n\n";
+
+    // test local variable declarations
+    local_integer: integer = 54321;
+    local_boolean: boolean = false;
+    local_character: char = 'Y';
+    local_string: string = "dlroW, olleH";
+    local_array: array [] integer = {local_integer};
+
+    print "local_integer. should be: 54321, is: ", local_integer, "\n";
+    print "local_boolean. should be: false, is: ", local_boolean, "\n";
+    print "local_character. should be: 'Y', is: '", local_character, "'\n";
+    print "local_string. should be: 'dlroW, olleH', is: '", local_string, "'\n\n";
+
+    // testing assignment on local variables
+    local_integer = 1;
+    local_boolean = true;
+    local_character = 'H';
+    local_string = "Local Assignment";
+
+    print "local_integer: should now be: 1, is: ", local_integer, "\n";
+    print "local_boolean: should now be: true, is: ", local_boolean, "\n";
+    print "local_character: should now be: 'H', is: '", local_character, "'\n";
+    print "local_string: should now be: 'Local Assignment', is: '", local_string, "'\n\n";
+
+    // testing assignment on global variables
+    global_integer = 256;
+    global_boolean = false;
+    global_character = 's';
+    global_string = "Global Assignment";
+
+    print "global_integer should be 256, is: ", global_integer, "\n";
+    print "global_boolean should be false, is: ", global_boolean, "\n";
+    print "global_character should be 's', is: '", global_character, "'\n";
+    print "global_string should be 'Global Assignment', is: '", global_string, "'\n\n";
+
+    // testing increment and decrement operators
+    local_integer++;
+    print "local_integer++ should be 3, is: ", local_integer++, "\n";
+
+    local_integer--;
+    print "local_integer-- should be 1, is: ", local_integer--, "\n\n";
+
+    // testing array subscript
+    print "global_array[0], should be 1, is: ", global_array[0], "\n";
+
+    // testing function calls
+    function_call: integer = func_many_args(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    print "function_call should be: 55, is ", function_call, "\n";
+
+    // testing print statement
+    print "testing print statements:\n";
+    print "\t", false, " hello world\n";
+    print "\t", 'c', "\n";
+    print "\t", 100*1, " ", true, "\n";
+    print "\t", "global_array is: ", global_array, "\n\n";
+
+    // testing if/else
+    print "testing if statements.\n";
+    print "if should be true, inner if should be false\n";
+    if (true) {
+        print "if is ", true, "\n";
+        if (false) {
+            print "inner if is ", true, "\n";
+        } else {
+            print "inner if is ", false, "\n";
+        }
+    } else {
+        print "if is ", false, "\n";
+    }
+    print "\n";
+
+    // testing for loops
+    print "testing loop, should print square numbers up to 81\n";
+    i: integer;
+    for (i = 0; i < 10; i++) {
+        print "\t i is: ", i * i, "\n";
+    }
+}

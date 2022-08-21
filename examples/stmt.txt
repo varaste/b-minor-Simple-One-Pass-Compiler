@@ -1,0 +1,52 @@
+fn: function integer () = {
+    x: integer;
+    x = 6;
+
+    y: integer = 7;
+
+    if (true) return 1;
+
+    if ("hello" == "sailor") {
+        return 1;
+        return 2;
+    }
+
+    if ((10 + 7 * (100 - 11)) == 10) {
+        return 100;
+    }
+
+    if (true) {
+        return 1;
+    } else {
+        return 6;
+    }
+
+    testing: boolean = true;
+    if (testing) {
+        x = 1;
+        if (testing) {
+            x = 2;
+        } else {
+            if (true) {
+                x = 3;
+            } else {
+                x = 4;
+            }
+        }
+        x = 5;
+    }
+
+    if (true) 6; else 7;
+
+    for (;;) {
+    }
+
+    for (x; (8 * 7 - (1/1)) != 6; 'c') {
+    }
+
+    print ;
+
+    print "Hello";
+
+    print 1, true, false, '#', "Hello";
+};

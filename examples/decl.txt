@@ -1,0 +1,14 @@
+hello: integer;
+testinng_123: string;
+TEST_VARIABLE: integer;
+Troo_falszz: boolean;
+
+hello_: integer = 1221939;
+testinng_123_: string = "hello there my good sirentountoehuneounoeduonthdurc";
+TEST_VARIABLE_: integer = 179999;
+char_variable: char = 'h';
+troo_falszz: boolean = true;
+falzz_troo: boolean = false;
+array_test: array [] array [] integer;
+array_test_with_size: array [5] array [100 * 72 + (10 - 1)] integer;
+array_test_init_list: array[] integer = {1, 2, 3, 4};
